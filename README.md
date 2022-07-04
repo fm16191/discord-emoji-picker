@@ -32,6 +32,8 @@ This displays a preview of the emoji in the selection menu.
 
 # Usage
 
+![self explanatory usage gif](usage.gif)
+
 1. Copy the URL of an image or the image path in your clipboard
 
 2. Execute the script and select "Create an emoji" or "Create an emoji and remove it's bg" if you want to remove it's background.
@@ -48,8 +50,10 @@ For ease of use, I suggest to make the script executable from any location.
 
 Thus, multiple options are available to you :
 
-Binding the script to a keyboard key : 
-- Using `bind` : 
-- Using `sxhkd` : just put the script path
+Key map the script : 
+- Using `sxhkd` : `path/to/discord-emoji-picker/emojis.sh`
+- Using [`xbindkeys, xmodmap ...`](https://askubuntu.com/questions/254424/how-can-i-change-what-keys-on-my-keyboard-do-how-can-i-create-custom-keyboard)
 
-Alias the executable : `alias discord-emojis=/path/to/discord-emoji-picker/emojis.sh`
+In Terminal :
+- Alias the executable : `alias discord-emojis=/path/to/discord-emoji-picker/emojis.sh`
+- Using `bind` (in bash) : `bind '"\C-u":"path/to/discord-emoji-picker/emojis.sh\n"'` (Changes the **C**ontrol + **u** binding to anything else)
