@@ -18,10 +18,10 @@ delete_emoji="Delete emoji"
 
 # SCRIPT FUNCTIONS
 get_emoji(){
-    if [ -f ~/emojis/"$1".png ];
+    if [ -f "$emojis_path/$1.png" ];
     then
         # If emoji already exists
-        xclip -selection clipboard -t image/png -i "$emojis_path/$1".png
+        xclip -selection clipboard -t image/png -i "$emojis_path/$1.png"
     fi
 }
 
@@ -67,7 +67,7 @@ create_emoji(){
 # SCRIPT START
 icons_emojis=""
 # find . -printf "%T@ %f\n" | sort -nr | cut  -d " " -f 2-
-# for e in $(find ~/emojis -type f -name "*.png" -printf '%f\n' | sed "s/\.png//g"); do
+# for e in $(find "$emojis_path" -type f -name "*.png" -printf '%f\n' | sed "s/\.png//g"); do
 for e in $(find "$emojis_path" -type f -name "*.png" -printf '%T@ %f\n' | sort -nr | cut -d " " -f 2- | sed "s/\.png//g"); do
     icons_emojis="$icons_emojis$e\0icon\x1f$e\n"
 done
